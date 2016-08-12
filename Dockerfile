@@ -15,6 +15,8 @@ RUN mkdir /node && \
 
 ENV PATH /node/node-v4.4.7-linux-x64/bin/:${PATH}
 
+RUN npm install -g grunt-cli bower -q
+
 # root entrypoint
 RUN mkdir /app
 WORKDIR /app
