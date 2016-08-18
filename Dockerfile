@@ -3,17 +3,20 @@ MAINTAINER Denys Batrak baden.i.ua@gmail.com
 
 ENV DEBIAN_FRONTEND="noninteractive"
 
+# LTS
+ENV NODE_VERSION=4.5.0
+
 RUN apt-get update -qq && \
     apt-get install -y xz-utils inotify-tools && \
     apt-get -qq clean
 
 RUN mkdir /node && \
     cd /node && \
-    curl -O https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x64.tar.xz && \
-    tar xf ./node-v4.4.7-linux-x64.tar.xz && \
-    rm ./node-v4.4.7-linux-x64.tar.xz
+    curl -O https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz && \
+    tar xf ./node-v${NODE_VERSION}-linux-x64.tar.xz && \
+    rm ./node-v${NODE_VERSION}-linux-x64.tar.xz
 
-ENV PATH /node/node-v4.4.7-linux-x64/bin/:${PATH}
+ENV PATH /node/node-v${NODE_VERSION}-linux-x64/bin/:${PATH}
 
 RUN npm install -g grunt-cli bower -q
 

@@ -1,4 +1,4 @@
-# docker-npm
+# docker-npm [![](https://images.microbadger.com/badges/image/baden/npm.svg)](https://microbadger.com/images/baden/npm "Get your own image badge on microbadger.com")
 
 My base docker image for npm-based developmenting.
 
